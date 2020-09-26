@@ -7,7 +7,7 @@ import {
   withRouter
 } from "react-router-dom"
 
-import './App.scss';
+import './App.css';
 
 import Home from './pages/Home/Home'
 class App extends Component {
