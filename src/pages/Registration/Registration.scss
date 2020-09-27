@@ -1,0 +1,14 @@
+.registrationPage {
+  .content {
+    max-width: 400px;
+    margin: 10% auto 0 auto;
+
+    .signInBox {
+      display: flex;
+      flex-direction: row;
+      margin-top: 3%;
+      justify-content: flex-end;
+    }
+
+  }
+}
