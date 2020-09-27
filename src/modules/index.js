@@ -1,9 +1,20 @@
-import {loginUser, registerUser, getUsersList, refreshUserToken, deleteUser} from "./user";
+import {
+  loginUser,
+  registerUser,
+  refreshUserToken,
+  getUser
+} from './user';
+
+import {
+  getUsersList,
+  deleteUser
+} from './admin'
 
 export {
   loginUser,
   registerUser,
   getUsersList,
   refreshUserToken,
-  deleteUser
+  deleteUser,
+  getUser,
 }

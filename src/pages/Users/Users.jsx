@@ -25,14 +25,12 @@ const Users = ({...props}) => {
 
   React.useEffect(() => {
     const {user, history} = props;
-    console.log('user user user user', user)
     if (user === undefined || Object.keys(user).length === 0) {
       return history.push('/login')
     }
     if (user.userRole !== 'Admin') {
       return history.push('/account')
     }
-    console.log('store', user.token)
     getUsersList(user.token).then(resp => {
       if (resp.status === 401) {
         const userTokens = {

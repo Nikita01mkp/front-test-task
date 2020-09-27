@@ -18,12 +18,8 @@ export const registerUser = async (data) => {
   })
 }
 
-export const getUsersList = async (token) => {
-  return await fetch(`http://localhost:3000/api/control/users/?${token}`)
-}
-
 export const refreshUserToken = async (userTokens) => {
-  return await fetch(`http://localhost:3000/api/control/users/`, {
+  return await fetch(`http://localhost:3000/api/users/`, {
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
@@ -32,20 +28,12 @@ export const refreshUserToken = async (userTokens) => {
   })
 }
 
-export const deleteUser = async (token, userId) => {
-  return await fetch(`http://localhost:3000/api/control/user/?${token}`, {
+export const getUser = async (token) => {
+  return await fetch('http://localhost:3000/api/users/getUser', {
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
     },
-    method: 'DELETE',
-    body: JSON.stringify({userId})
+    method: 'PUT',
+    body: JSON.stringify(token)
   })
-}
-
-export default{
-  loginUser,
-  registerUser,
-  getUsersList,
-  refreshUserToken,
-  deleteUser
 }

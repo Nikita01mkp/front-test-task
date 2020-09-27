@@ -33,7 +33,6 @@ const Login = ({history, ...props}) => {
     const isValid = isLogin && isPassword
     if (isValid) {
       loginUser(data).then(resp => {
-        console.log('loginUser resp', resp)
         if (resp.status === 200) {
           return resp.json().then(resp => {
             saveData(resp)
