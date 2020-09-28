@@ -5,16 +5,17 @@ import {Space, Spin} from "antd";
 import {setUser} from "../../actions";
 import {connect} from "react-redux";
 import {getUser} from '../../modules'
+import AccountsFields from "../../conponents/AccountFields/AccountFields";
 
 
 const UserAccount = ({...props}) => {
 
   const [loading, setLoading] = useState(true)
   const [userData, setUserData] = useState({
-    name: '',
-    gender: '',
-    age: '',
     email: '',
+    name: '',
+    surname: '',
+    DOB: Date,
   })
 
   React.useEffect(() => {
@@ -27,8 +28,6 @@ const UserAccount = ({...props}) => {
         resp.json().then(data => {
           setUserData({
             name: data.name || '',
-            gender: data.gender || '',
-            age: data.age || '',
             email: data.email || '',
           })
           return setLoading(false)
@@ -47,8 +46,8 @@ const UserAccount = ({...props}) => {
               <Spin size="large"/>
             </Space>
           </div>:
-          <div>
-            
+          <div className={'userData'}>
+            <AccountsFields />
           </div>
         }
       </div>

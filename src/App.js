@@ -22,12 +22,11 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route history={history} path='/home' component={Home}/>
           <Route history={history} path='/login' component={Login}/>
           <Route history={history} path='/registration' component={Registration}/>
           <Route history={history} path='/users' component={Users}/>
           <Route history={history} path='/account' component={UserAccount}/>
-          <Redirect from='/' to='/home'/>
+          <Redirect from='/' to='/home' path='/home' component={Home}/>
         </Switch>
       </div>
     );

@@ -5,6 +5,7 @@ import Header from "../../conponents/Header/Header";
 import './Registration.scss'
 import { Form, Input, InputNumber, Button } from 'antd';
 import {Link} from "react-router-dom";
+
 const layout = {
   labelCol: {
     span: 8,
@@ -25,6 +26,7 @@ const validateMessages = {
 };
 
 const Registration = ({...props}) => {
+  console.log('Registration')
   const onFinish = (values) => {
     registerUser(values.user).then(resp => {
       if(resp.status === 200){
@@ -43,45 +45,28 @@ const Registration = ({...props}) => {
           <Form.Item
             name={['user', 'login']}
             label="Login"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
+            rules={[{required: true}]}
           >
             <Input />
           </Form.Item>
           <Form.Item
             name={['user', 'password']}
             label="Password"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
+            rules={[{required: true}]}
           >
             <Input.Password />
           </Form.Item>
           <Form.Item
             name={['user', 'rePassword']}
             label="Confirm Password"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
+            rules={[{required: true}]}
           >
             <Input.Password />
           </Form.Item>
           <Form.Item
             name={['user', 'mail']}
             label="Email"
-            rules={[
-              {
-                type: 'email',
-                required: true
-              },
-            ]}
+            rules={[{type: 'email', required: true}]}
           >
             <Input />
           </Form.Item>
@@ -90,19 +75,6 @@ const Registration = ({...props}) => {
             label={'Name'}
           >
             <Input />
-          </Form.Item>
-          <Form.Item
-            name={['user', 'age']}
-            label="Age"
-            rules={[
-              {
-                type: 'number',
-                min: 0,
-                max: 99,
-              },
-            ]}
-          >
-            <InputNumber />
           </Form.Item>
           <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
             <Button type="primary" htmlType="submit">
@@ -123,7 +95,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => {
-  return dispatch
+  return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registration)

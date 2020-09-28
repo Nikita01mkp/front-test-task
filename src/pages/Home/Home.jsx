@@ -3,6 +3,7 @@ import { Spin, Space } from 'antd';
 
 const Home = ({history}) => {
   React.useEffect(() => {
+    console.log('Use effect home')
     const isUser = false;
     const isAdmin = false;
     if (isUser) {
